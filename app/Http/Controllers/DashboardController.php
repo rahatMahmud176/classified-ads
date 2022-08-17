@@ -14,7 +14,8 @@ public function index()
 public function userProfile()
 {
     return view('font-end.dashboard.user-profile');
-}
+} 
+ 
 
 
 

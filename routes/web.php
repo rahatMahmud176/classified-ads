@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdsController;
 use Illuminate\Support\Facades\Route;
 
  
@@ -48,10 +47,21 @@ Route::get('my-user/register',[
 
 
 // =============Back-end section==============
-Route::get('admin-dashboard',[
+Route::get('admin/dashboard',[
     'uses'  => 'App\Http\Controllers\BackendController@dashboard',
     'as'    => 'back-end/dashboard'
 ]);
+Route::get('/login',[
+    'uses'  => 'App\Http\Controllers\BackendController@login',
+    'as'    => 'admin/login'
+]);
+Route::get('/register',[
+    'uses'  => 'App\Http\Controllers\BackendController@register',
+    'as'    => 'admin/register'
+]); 
+Route::resource('admin', App\Http\Controllers\AdminController::class);
+
+ 
 
 
 
